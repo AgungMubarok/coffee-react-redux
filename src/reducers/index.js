@@ -7,7 +7,7 @@ import saldoReducer from './saldoReducer';
 // Combine all reducer
 const rootReducer = combineReducers({
   products: buyProductReducer,
-  wallet: saldoReducer,
+  saldo: saldoReducer,
 })
 
 export default rootReducer;

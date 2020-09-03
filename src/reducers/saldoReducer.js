@@ -1,32 +1,35 @@
-import { initialProduct } from './buyProductReducer';
-
-const initialWallet = {
-  wallet: 0,
+const saldo = {
+  saldo: 0
 }
 
-const saldoReducer = (state = initialWallet, action) => {
-  if (action.type === 'BUY_ONE_MOCHA') {
-    const newState = {
-      wallet: state.wallet + initialProduct.mocha.price,
-    }
-    return newState;
-  } else if (action.type === 'BUY_ONE_CAPPUCINO') {
-    const newState = {
-      wallet: state.wallet + initialProduct.cappucino.price
-    }
-    return newState;
-  } else if (action.type === 'BUY_ONE_CHOCOLATE') {
-    const newState = {
-      wallet: state.wallet + initialProduct.chocolate.price
-    }
-    return newState;
-  } else if (action.type === 'BUY_ONE_TEA') {
-    const newState = {
-      wallet: state.wallet + initialProduct.tea.price
-    }
-    return newState;
+const saldoReducers = (state = saldo, action) => {
+  if(action.type === "ADD_ONE_TEA"){
+      const newSaldo = {
+          saldo: state.saldo + action.price
+      }
+      return newSaldo
+  }if(action.type === "ADD_ONE_CHOCOLATE"){
+      const newSaldo = {
+          saldo: state.saldo + action.price
+      }
+      return newSaldo
+  }if(action.type === "ADD_ONE_CAPPUCINO"){
+      const newSaldo = {
+          saldo: state.saldo + action.price
+      }
+      return newSaldo
+  }if(action.type === "ADD_ONE_COFFEEMOCHA"){
+      const newSaldo = {
+          saldo: state.saldo + action.price
+      }
+      return newSaldo
+  }if(action.type === "RESET_SALDO"){
+      const newSaldo = {
+          saldo: saldo.saldo
+      }
+      return newSaldo
   }
-  return state;
+  return state
 }
 
-export default saldoReducer;
+export default saldoReducers;
